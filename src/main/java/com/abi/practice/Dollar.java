@@ -8,8 +8,8 @@ public class Dollar extends Money {
     }
 
     @Override
-    public Dollar times(int multiplier) {
-        return new Dollar(amount * multiplier, "USD");
+    public Money times(int multiplier) {
+        return Money.dollar(amount * multiplier);
     }
 
 }
