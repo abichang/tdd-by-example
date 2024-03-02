@@ -27,10 +27,11 @@ public class MoneyTest {
         assertEquals(Money.franc(5), Money.franc(5));
         assertNotEquals(Money.franc(5), Money.franc(6));
         assertNotEquals(Money.franc(5), Money.dollar(5));
+        assertEquals(new Money(10, "CHF"), new Franc(10, "CHF"));
     }
 
     @Test
-    void currency() throws Exception {
+    void currency() {
         assertEquals("USD", Money.dollar(1).getCurrency());
         assertEquals("CHF", Money.franc(1).getCurrency());
     }

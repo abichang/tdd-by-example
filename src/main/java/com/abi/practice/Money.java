@@ -1,6 +1,6 @@
 package com.abi.practice;
 
-public abstract class Money {
+public class Money {
     protected int amount;
     protected String currency;
 
@@ -21,10 +21,12 @@ public abstract class Money {
     public boolean equals(Object obj) {
         Money money = (Money) obj;
         return amount == money.amount
-                && getClass().equals(money.getClass());
+                && currency.equals(money.currency);
     }
 
-    public abstract Money times(int multiplier);
+    public Money times(int multiplier) {
+        return null;
+    }
 
     public String getCurrency() {
         return currency;
