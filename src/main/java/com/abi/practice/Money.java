@@ -24,11 +24,12 @@ public class Money {
                 && currency.equals(money.currency);
     }
 
-    public Money times(int multiplier) {
-        return null;
-    }
 
     public String getCurrency() {
         return currency;
+    }
+
+    public Money times(int multiplier) {
+        return new Money(amount * multiplier, currency);
     }
 }
