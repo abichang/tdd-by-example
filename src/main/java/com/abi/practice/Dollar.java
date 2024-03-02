@@ -2,7 +2,7 @@ package com.abi.practice;
 
 public class Dollar extends Money {
 
-    public int amount;
+    private int amount;
 
     public Dollar(int amount) {
         this.amount = amount;

@@ -2,7 +2,7 @@ package com.abi.practice;
 
 public class Franc {
 
-    public int amount;
+    private int amount;
 
     public Franc(int amount) {
         this.amount = amount;
