@@ -8,7 +8,8 @@ public class Dollar extends Money {
 
     @Override
     public boolean equals(Object obj) {
-        return amount == ((Dollar) obj).amount;
+        Money dollar = (Dollar) obj;
+        return amount == dollar.amount;
     }
 
     public Dollar times(int multiplier) {
