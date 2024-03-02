@@ -1,8 +1,13 @@
 package com.abi.practice;
 
 public abstract class Money {
-    protected String currency;
     protected int amount;
+    protected String currency;
+
+    public Money(int amount, String currency) {
+        this.amount = amount;
+        this.currency = currency;
+    }
 
     static Money dollar(int amount) {
         return new Dollar(amount, "USD");
