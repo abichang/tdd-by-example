@@ -1,6 +1,6 @@
 package com.abi.practice;
 
-public class Dollar {
+public class Dollar extends Money {
 
     public int amount;
 
