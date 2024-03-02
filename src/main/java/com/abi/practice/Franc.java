@@ -16,7 +16,7 @@ public class Franc extends Money {
     }
 
     @Override
-    public String currency() {
+    public String getCurrency() {
         return currency;
     }
 }
