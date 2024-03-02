@@ -1,6 +1,7 @@
 package com.abi.practice;
 
 public abstract class Money {
+    protected String currency;
     protected int amount;
 
     static Money dollar(int amount) {
@@ -20,5 +21,7 @@ public abstract class Money {
 
     public abstract Money times(int multiplier);
 
-    public abstract String getCurrency();
+    public String getCurrency() {
+        return currency;
+    }
 }
