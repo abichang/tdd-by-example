@@ -2,8 +2,11 @@ package com.abi.practice;
 
 public class Dollar extends Money {
 
+    private final String currency;
+
     public Dollar(int amount) {
         this.amount = amount;
+        currency = "USD";
     }
 
     @Override
@@ -13,6 +16,6 @@ public class Dollar extends Money {
 
     @Override
     public String currency() {
-        return "USD";
+        return currency;
     }
 }
