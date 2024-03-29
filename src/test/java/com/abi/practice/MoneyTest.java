@@ -38,6 +38,14 @@ public class MoneyTest {
         assertEquals(five, sum.addend);
     }
 
+    @Test
+    void reduce_sum() {
+        Expression sum = new Sum(Money.dollar(3), Money.dollar(4));
+        Bank bank = new Bank();
+        Money result = bank.reduce(sum, "USD");
+        assertEquals(Money.dollar(7), result);
+    }
+
 
     @Test
     void equality() {
