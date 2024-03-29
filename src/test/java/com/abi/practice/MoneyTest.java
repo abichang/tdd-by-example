@@ -49,6 +49,7 @@ public class MoneyTest {
     @Test
     void reduce_money() {
         Bank bank = new Bank();
+        bank.addRate("USD", "USD", 1);
         Money result = bank.reduce(Money.dollar(1), "USD");
         assertEquals(Money.dollar(1), result);
     }
