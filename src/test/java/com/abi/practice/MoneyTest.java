@@ -46,6 +46,13 @@ public class MoneyTest {
         assertEquals(Money.dollar(7), result);
     }
 
+    @Test
+    void reduce_money() {
+        Bank bank = new Bank();
+        Money result = bank.reduce(Money.dollar(1), "USD");
+        assertEquals(Money.dollar(1), result);
+    }
+
 
     @Test
     void equality() {
