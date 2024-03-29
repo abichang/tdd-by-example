@@ -25,6 +25,7 @@ public class MoneyTest {
         Money five = Money.dollar(5);
         Expression sum = five.plus(five);
         Bank bank = new Bank();
+        bank.addRate("USD", "USD", 1);
         Money reduced = bank.reduce(sum, "USD");
         assertEquals(Money.dollar(10), reduced);
     }
@@ -42,6 +43,7 @@ public class MoneyTest {
     void reduce_sum() {
         Expression sum = new Sum(Money.dollar(3), Money.dollar(4));
         Bank bank = new Bank();
+        bank.addRate("USD", "USD", 1);
         Money result = bank.reduce(sum, "USD");
         assertEquals(Money.dollar(7), result);
     }
@@ -60,6 +62,17 @@ public class MoneyTest {
         bank.addRate("CHF", "USD", 2);
         Money result = bank.reduce(Money.franc(2), "USD");
         assertEquals(Money.dollar(1), result);
+    }
+
+    @Test
+    void mixed_addition() {
+        Money fiveBucks = Money.dollar(5);
+        Money tenFrancs = Money.franc(10);
+        Bank bank = new Bank();
+        bank.addRate("CHF", "USD", 2);
+        bank.addRate("USD", "USD", 1);
+        Money result = bank.reduce(fiveBucks.plus(tenFrancs), "USD");
+        assertEquals(Money.dollar(10), result);
     }
 
 
